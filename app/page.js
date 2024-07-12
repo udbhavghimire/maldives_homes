@@ -109,168 +109,6 @@ export default async function Home(props) {
         </section>
       </AOSWrapper>
 
-      <div className="container my-4">
-        <div className="row pt-5 mt-md-5 align-items-center justify-content-between">
-          <div className="col-md-6">
-            <div
-              id="carouselExampleIndicators"
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="0"
-                  className="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img
-                    src="/image1.jpeg"
-                    className="d-block w-100"
-                    alt="Image 1"
-                  />
-                </div>
-                <div className="carousel-item">
-                  <img
-                    src="/image2.jpeg"
-                    className="d-block w-100"
-                    alt="Image 2"
-                  />
-                </div>
-                <div className="carousel-item">
-                  <img
-                    src="/image3.jpeg"
-                    className="d-block w-100"
-                    alt="Image 3"
-                  />
-                </div>
-              </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <h1 className="font-family2 fw-bold sm-center mt-4 mt-md-0 text-4xl">
-              Looking For Villa / Appartment In Maldives?
-            </h1>
-            <div className="buttons my-3 sm-center">
-              <Link href="#contact">
-                <button className="button btn btn-dark  mr-2">
-                  Request Information
-                </button>
-                <button className="button btn btn-primary">Contact Now</button>
-              </Link>
-            </div>
-            <p className="pt-2">
-              Welcome to Maldiveshomes.com, The most reliable platform for home
-              selling, leasing, and investing. Stay ahead with the latest
-              updates on prime real estate opportunities across the Maldives.
-              Discover exclusive insights and secure your dream property with
-              ease and confidence.
-            </p>
-            <div className="recently-bought pt-md-4 pt-2">
-              <h2 className="fw-normal font-family2 text-3xl sm-center text-decoration-underline">
-                New Appartment
-              </h2>
-              <div className="row g-3">
-                <div className="col-4 ">
-                  <img
-                    src="/image1.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 1"
-                  />
-                </div>
-                <div className="col-4 ">
-                  <img
-                    src="/image2.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 2"
-                  />
-                </div>
-                <div className="col-4 ">
-                  <img
-                    src="/image3.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 3"
-                  />
-                </div>
-                <div className="col-4 ">
-                  <img
-                    src="/image4.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 4"
-                  />
-                </div>
-                <div className="col-4 ">
-                  <img
-                    src="/image5.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 5"
-                  />
-                </div>
-                <div className="col-4 ">
-                  <img
-                    src="/image6.jpeg"
-                    className="img-fluid img-small"
-                    alt="Image 6"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="sm-center mt-2 mt-md-0">
-              <Link href="#projects">
-                <div className=" mt-3 btn btn-outline-dark sm-center  ">
-                  {" "}
-                  <span className="sm-center btn-outline-dark ">
-                    Explore More{" "}
-                    <i class="bi bi-arrow-up-right-circle sm-center "></i>
-                  </span>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* <div className="pt-5 " id="top10gta">
         <div className="container pt-5 ">
           <div className="d-flex flex-column align-items-center justify-content-center">
@@ -340,6 +178,170 @@ export default async function Home(props) {
                   <CondoCard {...item} />
                 </div>
               ))}
+          </div>
+
+          <div className="container my-4">
+            <div className="row pt-5 mt-md-5 align-items-center justify-content-between">
+              <div className="col-md-6">
+                <div
+                  id="carouselExampleIndicators"
+                  className="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div className="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="0"
+                      className="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="/image1.jpeg"
+                        className="d-block w-100"
+                        alt="Image 1"
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="/image2.jpeg"
+                        className="d-block w-100"
+                        alt="Image 2"
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img
+                        src="/image3.jpeg"
+                        className="d-block w-100"
+                        alt="Image 3"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      className="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      className="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <h1 className="font-family2 fw-bold sm-center mt-4 mt-md-0 text-4xl">
+                  Looking For Villa / Appartment In Maldives?
+                </h1>
+                <div className="buttons my-3 sm-center">
+                  <Link href="#contact">
+                    <button className="button btn btn-dark  mr-2">
+                      Request Information
+                    </button>
+                    <button className="button btn btn-primary">
+                      Contact Now
+                    </button>
+                  </Link>
+                </div>
+                <p className="pt-2">
+                  Welcome to Maldiveshomes.com, The most reliable platform for
+                  home selling, leasing, and investing. Stay ahead with the
+                  latest updates on prime real estate opportunities across the
+                  Maldives. Discover exclusive insights and secure your dream
+                  property with ease and confidence.
+                </p>
+                <div className="recently-bought pt-md-4 pt-2">
+                  <h2 className="fw-normal font-family2 text-3xl sm-center text-decoration-underline">
+                    New Appartment
+                  </h2>
+                  <div className="row g-3">
+                    <div className="col-4 ">
+                      <img
+                        src="/image1.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 1"
+                      />
+                    </div>
+                    <div className="col-4 ">
+                      <img
+                        src="/image2.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 2"
+                      />
+                    </div>
+                    <div className="col-4 ">
+                      <img
+                        src="/image3.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 3"
+                      />
+                    </div>
+                    <div className="col-4 ">
+                      <img
+                        src="/image4.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 4"
+                      />
+                    </div>
+                    <div className="col-4 ">
+                      <img
+                        src="/image5.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 5"
+                      />
+                    </div>
+                    <div className="col-4 ">
+                      <img
+                        src="/image6.jpeg"
+                        className="img-fluid img-small"
+                        alt="Image 6"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="sm-center mt-2 mt-md-0">
+                  <Link href="#projects">
+                    <div className=" mt-3 btn btn-outline-dark sm-center  ">
+                      {" "}
+                      <span className="sm-center btn-outline-dark ">
+                        Explore More{" "}
+                        <i class="bi bi-arrow-up-right-circle sm-center "></i>
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="py-5 my-2"></div>
           <h2 className="fw-mine text-center mb-5 accent-line font-family2 fs-big">
