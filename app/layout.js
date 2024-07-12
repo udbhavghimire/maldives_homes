@@ -18,9 +18,9 @@ export const metadata = {
   alternates: {
     canonical: `https://condomonk.ca/`,
   },
-  title: "Pre Construction Homes for Sale in Canada",
+  title: "Appartments and Villas For Sale in Maldives",
   description:
-    "Find the latest Pre Construction homes for sale in Canada with the Canada's most user-friendly pre construction portal. Search new homes to buy from leading estate marketplace in Canada.",
+    "Maldive's Most Reliable Home Selling, Leasing & Investing Platform",
   icons: {
     icon: "/icon.png",
     shortcut: "/shortcut-icon.png",
