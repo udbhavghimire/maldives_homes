@@ -4,7 +4,7 @@ import CondoCard from "@/components/CondoCard";
 import PreconSchema from "@/components/PreconSchema";
 import BottomContactForm from "@/components/BottomContactForm";
 import MainSearch from "@/components/MainSearch";
-import "./icons.css";
+import "../icons.css";
 // import FeaturedCard from "@/components/FeaturedCard";
 import AOSWrapper from "@/components/AOSWrapper";
 

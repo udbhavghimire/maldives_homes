@@ -47,9 +47,9 @@ const Navbar = ({ cities, dropdown_cities, transparent }) => {
           <div className="d-flex">
             <Link
               href="/"
-              className="logo d-flex justify-content-center align-items-center pe-1 font-family2"
+              className="logo  justify-content-center align-items-center pe-1 font-family2"
             >
-              <span className="d-flex text-nowrap">Maldives Homes</span>
+              <span className="text-nowrap">Maldives Homes</span>
             </Link>
             <div class="nav-item d-block d-md-none mx-2 mt-1">
               <a

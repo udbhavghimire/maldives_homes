@@ -50,19 +50,19 @@ export async function generateMetadata({ params }, parent) {
       canonical: `https://condomonk.ca/${params.city}/${params.slug}`,
     },
     title:
-      data.preconstruction.project_name +
+      data.project_name +
       " in " +
-      data.preconstruction.city.name +
+      data.city.name +
       " by " +
-      data.preconstruction.developer.name,
+      data.developer.name,
     description:
-      data.preconstruction.project_name +
+      data.project_name +
       " in " +
-      data.preconstruction.city.name +
+      data.city.name +
       " by " +
-      data.preconstruction.developer.name +
+      data.developer.name +
       " prices starting from " +
-      Nformatter(data.preconstruction.price_starting_from, 2) +
+      Nformatter(data.price_starting_from, 2) +
       " CAD",
   };
 }
@@ -142,9 +142,9 @@ export default async function Home({ params }) {
           />
 
           <Gallery
-            images={data.preconstruction.image}
-            project_name={data.preconstruction.project_name}
-            project_address={data.preconstruction.project_address}
+            images={data.image}
+            project_name={data.project_name}
+            project_address={data.project_address}
           ></Gallery>
 
           <div className="container  px-0 pt-3">
@@ -156,12 +156,12 @@ export default async function Home({ params }) {
                       {/* <div className="d-flex gap-3 my-2">
                         <div className=" btn btn-sm bg-warning ">
                           <span className="col fs-esmall text-dark">
-                            {data.preconstruction.status}
+                            {data.status}
                           </span>
                         </div>
                         <div className=" btn btn-sm bg-white shadow">
                           <span className="col fs-esmall ">
-                            {data.preconstruction.project_type}
+                            {data.project_type}
                           </span>
                         </div>
                       </div> */}
@@ -198,25 +198,20 @@ export default async function Home({ params }) {
                       <div className="rounded-mine pt-3">
                         <div>
                           <p className="mb-0">
-                            Developer{" "}
-                            <strong>
-                              {data.preconstruction.developer.name}
-                            </strong>
+                            Developer <strong>{data.developer.name}</strong>
                           </p>
                           <div className="mb-1">
                             <span className="me-2 fw-mine2 mb-2 fs-mine3">
                               Appartment Location:
                             </span>
-                            <span scope="col">
-                              {data.preconstruction.project_address}
-                            </span>
+                            <span scope="col">{data.project_address}</span>
                           </div>
                           {/* <div className="mb-1">
                             <span className="me-2 fw-mine2 mb-2 fs-mine3">
                               Units:
                             </span>
                             <span scope="col">
-                              {data.preconstruction.no_of_units}
+                              {data.no_of_units}
                             </span>
                           </div> */}
                           {/* <div className="mb-1">
@@ -224,7 +219,7 @@ export default async function Home({ params }) {
                               Occupancy:
                             </span>
                             <span scope="col">
-                              {data.preconstruction.occupancy}
+                              {data.occupancy}
                             </span>
                           </div> */}
 
@@ -236,13 +231,13 @@ export default async function Home({ params }) {
                               {" "}
                               <CustomModal
                                 linkText="Request Floor Plans Details"
-                                proj_name={data.preconstruction.project_name}
+                                proj_name={data.project_name}
                                 defaultmessage={
                                   "Please send me floor plan details of " +
-                                  data.preconstruction.project_name +
+                                  data.project_name +
                                   ".  Thank you"
                                 }
-                                city={data.preconstruction.city.name}
+                                city={data.city.name}
                               />
                             </span>
                           </div>
@@ -255,13 +250,13 @@ export default async function Home({ params }) {
                               {" "}
                               <CustomModal
                                 linkText="Request Parking Price"
-                                proj_name={data.preconstruction.project_name}
+                                proj_name={data.project_name}
                                 defaultmessage={
                                   "Please send me parking price details of " +
-                                  data.preconstruction.project_name +
+                                  data.project_name +
                                   ".  Thank you"
                                 }
-                                city={data.preconstruction.city.name}
+                                city={data.city.name}
                               />
                             </span>
                           </div>
@@ -274,13 +269,13 @@ export default async function Home({ params }) {
                               {" "}
                               <CustomModal
                                 linkText="Request Locker Price"
-                                proj_name={data.preconstruction.project_name}
+                                proj_name={data.project_name}
                                 defaultmessage={
                                   "Please send me locker price details of " +
-                                  data.preconstruction.project_name +
+                                  data.project_name +
                                   ".  Thank you"
                                 }
-                                city={data.preconstruction.city.name}
+                                city={data.city.name}
                               />
                             </span>
                           </div>
@@ -293,13 +288,13 @@ export default async function Home({ params }) {
                               {" "}
                               <CustomModal
                                 linkText="Request Est Maintenance"
-                                proj_name={data.preconstruction.project_name}
+                                proj_name={data.project_name}
                                 defaultmessage={
                                   "Please send me estimated maintenance fee of " +
-                                  data.preconstruction.project_name +
+                                  data.project_name +
                                   ".  Thank you"
                                 }
-                                city={data.preconstruction.city.name}
+                                city={data.city.name}
                               />
                             </span>
                           </div>
@@ -315,48 +310,47 @@ export default async function Home({ params }) {
                           Click here to contact us today!
                         </span>
                       }
-                      proj_name={data.preconstruction.project_name}
+                      proj_name={data.project_name}
                       defaultmessage={
                         "Please send me the latest information of " +
-                        data.preconstruction.project_name +
+                        data.project_name +
                         ".  Thank you"
                       }
-                      city={data.preconstruction.city.name}
+                      city={data.city.name}
                     />
                     <div className="pb-5 ">
                       <h2 className="fw-bold fs-3 font-family2">
-                        Information about {data.preconstruction.project_name} in{" "}
-                        {data.preconstruction.city.name}
+                        Information about {data.project_name} in{" "}
+                        {data.city.name}
                       </h2>
                       <div className="text-start my-3 text-inside">
                         <div
                           className="iframe-container custom-description-container leading-8"
                           dangerouslySetInnerHTML={{
-                            __html: data.preconstruction.description,
+                            __html: data.description,
                           }}
                         ></div>
                       </div>
                       <CustomModal
                         linkText={
                           <span className="btn  btn-warning rounded-pill shadow-lg">
-                            Send me more info about{" "}
-                            {data.preconstruction.project_name}
+                            Send me more info about {data.project_name}
                           </span>
                         }
-                        proj_name={data.preconstruction.project_name}
+                        proj_name={data.project_name}
                         defaultmessage={
                           "Please send me more information about " +
-                          data.preconstruction.project_name +
+                          data.project_name +
                           ".  Thank you"
                         }
-                        city={data.preconstruction.city.name}
+                        city={data.city.name}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="py-3 my-5">
                   <h2 className="fw-bold fs-4 pb-3 font-family2">
-                    Walk Score for {data.preconstruction.project_name}
+                    Walk Score for {data.project_name}
                   </h2>
 
                   <div>
@@ -369,7 +363,7 @@ export default async function Home({ params }) {
                           width="100%"
                           src={
                             "https://www.walkscore.com/serve-walkscore-tile.php?wsid=&amp&s=" +
-                            convDash(data.preconstruction.project_address) +
+                            convDash(data.project_address) +
                             "&amp;o=h&amp;c=f&amp;h=500&amp;fh=0&amp;w=737"
                           }
                         ></iframe>
@@ -387,15 +381,15 @@ export default async function Home({ params }) {
                           is Canada's one of the largest database of new pre
                           construction homes. Our comprehensive database is
                           populated by our research and analysis of publicly
-                          available data.preconstruction. Condomonk strives for
-                          accuracy and we make every effort to verify the
-                          information. The information provided on Condomonk.ca
-                          may be outdated or inaccurate. Condomonk Inc. is not
-                          liable for the use or misuse of the site's
-                          information.The information displayed on condomonk.ca
-                          is for reference only. Please contact a liscenced real
-                          estate agent or broker to seek advice or receive
-                          updated and accurate information.
+                          available data. Condomonk strives for accuracy and we
+                          make every effort to verify the information. The
+                          information provided on Condomonk.ca may be outdated
+                          or inaccurate. Condomonk Inc. is not liable for the
+                          use or misuse of the site's information.The
+                          information displayed on condomonk.ca is for reference
+                          only. Please contact a liscenced real estate agent or
+                          broker to seek advice or receive updated and accurate
+                          information.
                         </p>
                       </div>
                     </div>
@@ -406,44 +400,19 @@ export default async function Home({ params }) {
               <div className="col col-md-4 ps-md-2 pt-5 pt-md-0" id="contact">
                 <div className="py-4 py-md-0"></div>
                 <div className="side-fix-contact mt-mine pe-0">
-                  {/* <div className="text-center">
+                  <div className="text-center">
                     <img
                       alt="Register Now Text Design"
                       src="/contact-me.png"
                       className="img-fluid mb-3 side-contact-img"
                     />
-                  </div> */}
+                  </div>
                   <div className="m-1 p-4 py-3 shadow-lg rounded-mine bordt form-color">
                     <div className="row d-flex justify-content-center align-items-center">
-                      <div className="col-4">
-                        {data.partner[0] && (
-                          <img
-                            src={`https://wong.condomonk.ca${data.partner[0].image}`}
-                            alt="dce"
-                            className="partner-img "
-                          />
-                        )}
-                        {!data.partner[0] && (
-                          <img
-                            src="/contact-bottom-2.png"
-                            alt="dce"
-                            className="agent-img"
-                          />
-                        )}
-                      </div>
                       <div className="col-8 text-center">
-                        <h5 className="fw-bold  fs-4 ">
-                          {data.partner[0] &&
-                            data.partner[0].partner_type != "Brokerage" && (
-                              <>{data.partner[0].name}</>
-                            )}
+                        <h5 className="fw-bold  fs-4 "></h5>
 
-                          {!data.partner[0] && "Receive a Call"}
-                        </h5>
-
-                        <span className="mt-5 fs-6 text-center">
-                          {data.partner[0] && data.partner[0].brokerage_name}
-                        </span>
+                        <span className="mt-5 fs-6 text-center"></span>
 
                         <p
                           className="mb-0 bva2 mt-1 d-flex justify-content-center"
@@ -484,13 +453,13 @@ export default async function Home({ params }) {
                     </div>
                     <div className="my-2"></div>
                     <SideContactForm
-                      proj_name={data.preconstruction.project_name}
+                      proj_name={data.project_name}
                       defaultmessage={
                         "Please send me additional information about " +
-                        data.preconstruction.project_name +
+                        data.project_name +
                         ".  Thank you"
                       }
-                      city={data.preconstruction.city.name}
+                      city={data.city.name}
                     ></SideContactForm>
                     <div className="d-flex">
                       <p className="small-text2 mb-3 text-center">
@@ -525,7 +494,7 @@ export default async function Home({ params }) {
                 <div className="relative inline-flex sm-center mx-2 text-wrap">
                   <span className="absolute inset-x-0 bottom-0 "></span>
                   <span className="relative font-bold text-black whitespace-normal">
-                    in {data.preconstruction.city.name}
+                    in {data.city.name}
                   </span>
                 </div>
                 ( 2024 )

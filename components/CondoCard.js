@@ -35,7 +35,7 @@ export default function CondoCard(props) {
             {props.image ? (
               <img
                 loading="lazy"
-                src={`https://wong.condomonk.ca${props.image.image}`}
+                src={`https://wong.condomonk.ca${props.image[0].image}`}
                 layout="responsive"
                 className="img-fluid condocard-img-top"
                 alt={`${props.project_name} located at ${props.project_address} image`}

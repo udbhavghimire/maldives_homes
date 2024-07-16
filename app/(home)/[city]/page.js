@@ -119,7 +119,7 @@ export default async function Home({ params }) {
           <div className="mt-md-5 mt-0"></div>
           <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3 gx-lg-3 ">
             {data.preconstructions &&
-              filteredprojects("Selling").map((item, no) => (
+              filteredprojects("Rent").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -135,7 +135,7 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="pt-5"></div>
           <h2 className="fw-bold fs-2 mb-4 font-family2">
-            {filteredprojects("Upcoming").length > 0 ? (
+            {filteredprojects("Sell").length > 0 ? (
               `Launching Soon - New Construction Projects in ${CapitalizeFirst(
                 data.city.name
               )}`
@@ -201,20 +201,20 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="py-5 my-5" id="contact">
             <div className="container">
-              {/* <div className="row justify-content-center">
+              <div className="row justify-content-center">
                 <img
                   src="/contact-bottom-2.png"
                   alt="dce"
                   className="img-fluid w-25 w-smm-50 mb-3"
                 />
-              </div> */}
+              </div>
               <h2 className="fw-bolder fw-boldie text-center px-md-4 fs-3"></h2>
 
               <div className="row row-cols-1 row-cols-md-3 mt-5">
                 <div className="col-md-3"></div>
                 <div className="col-md-6" id="contact">
                   <div className="d-flex gap-5 justify-content-center align-items-center pb-4">
-                    <div className="text-center">
+                    {/* <div className="text-center">
                       {data.partner[0] && (
                         <img
                           src={`https://wong.condomonk.ca${data.partner[0].image}`}
@@ -260,7 +260,7 @@ export default async function Home({ params }) {
                           </sup>
                         </span>
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                   <BottomContactForm
                     proj_name="City Page"
