@@ -57,7 +57,7 @@ export default async function Home({ params }) {
           <div className="d-flex ">
             <div>
               <h1 className="main-title font-family2 pb-2 pb-md-0">
-                New Pre Construction Homes in {CapitalizeFirst(params.city)}{" "}
+                Appartments for sale in {CapitalizeFirst(params.city)}{" "}
                 <span className="nextline-sm"> ( 2024 )</span>
               </h1>
             </div>
@@ -72,7 +72,7 @@ export default async function Home({ params }) {
                 >
                   <path
                     d="M2 4.5L144 2L2 12L144 9"
-                    stroke="#FFC007"
+                    stroke="#0096FF"
                     stroke-width="3"
                     stroke-linecap="round"
                   ></path>
@@ -81,37 +81,23 @@ export default async function Home({ params }) {
             </div>
           </div>
           <p className="font-normal sm-center pb-2 pb-md-0 mb-0 fw-medium text-lg">
-            {data.preconstructions.length} New Pre construction homes, condos
-            and townhomes for sale in {CapitalizeFirst(params.city)}.
+            Discover {data.preconstructions.length} New Beautiful Appartments
+            for Sale in {CapitalizeFirst(params.city)}.
           </p>
           <div className="d-flex sm-center  mb-lg-0 sticky-buttons pb-0 mb-0">
             <div className="d-flex flex-column flex-md-row mb-md-2 mb-0 mt-1 overflow-hidden">
               <div className="d-flex gap-2">
                 <Link
                   className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m"
-                  href={`/${params.city}/upcoming/`}
+                  href={`/${params.city}/appartment-for-sell/`}
                 >
-                  Upcoming Projects {CapitalizeFirst(params.city)}
+                  Appartments for Sell in {CapitalizeFirst(params.city)}
                 </Link>
                 <Link
                   className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m mx-0 me-2"
-                  href={`/${params.city}/townhomes/`}
+                  href={`/${params.city}/appartment-for-rent/`}
                 >
-                  New Townhomes {CapitalizeFirst(params.city)}
-                </Link>
-              </div>
-              <div className="d-flex gap-2">
-                <Link
-                  className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m"
-                  href={`/${params.city}/detached/`}
-                >
-                  New Detached Homes {CapitalizeFirst(params.city)}
-                </Link>
-                <Link
-                  className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m mx-0"
-                  href={`/${params.city}/condos/`}
-                >
-                  New Condos {CapitalizeFirst(params.city)}
+                  Appartments for rent in {CapitalizeFirst(params.city)}
                 </Link>
               </div>
             </div>
@@ -119,7 +105,7 @@ export default async function Home({ params }) {
           <div className="mt-md-5 mt-0"></div>
           <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3 gx-lg-3 ">
             {data.preconstructions &&
-              filteredprojects("Rent").map((item, no) => (
+              filteredprojects("Sell").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}
@@ -135,8 +121,8 @@ export default async function Home({ params }) {
           <div className="pt-5 mt-5"></div>
           <div className="pt-5"></div>
           <h2 className="fw-bold fs-2 mb-4 font-family2">
-            {filteredprojects("Sell").length > 0 ? (
-              `Launching Soon - New Construction Projects in ${CapitalizeFirst(
+            {filteredprojects("Rent").length > 0 ? (
+              `Lease - New Appartment for Rent in ${CapitalizeFirst(
                 data.city.name
               )}`
             ) : (
@@ -145,7 +131,7 @@ export default async function Home({ params }) {
           </h2>
           <div className="row row-cols-1 row-cols-md-4 gy-4 gx-3">
             {data.preconstructions &&
-              filteredprojects("Planning Phase").map((item, no) => (
+              filteredprojects("Rent").map((item, no) => (
                 <div className="col" key={item.id}>
                   <script
                     key={item.slug}

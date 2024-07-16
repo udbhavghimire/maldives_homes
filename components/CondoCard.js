@@ -32,7 +32,7 @@ export default function CondoCard(props) {
             className="mylinkk"
             target="_blank"
           >
-            {props.image ? (
+            {props.image.length > 0 ? (
               <img
                 loading="lazy"
                 src={`https://wong.condomonk.ca${props.image[0].image}`}
@@ -56,8 +56,8 @@ export default function CondoCard(props) {
             <span className="shadow-lg p-1 px-2 abs2">Co-op Available</span>
           )}
           <span className="d-flex">
-            <span className="shadow-lg p-1 ms-2 abs1">{props.status}</span>
-            <span className="shadow-lg p-1 mx-2 abs3">
+            <span className="shadow-lg p-1 ms-2 abs1 px-2">{props.status}</span>
+            <span className="shadow-lg p-1 mx-2 abs3 px-2">
               {props.project_type}
             </span>
           </span>
@@ -76,7 +76,7 @@ export default function CondoCard(props) {
             <h3 className="mb-1 cardd-title text-dark font-family2">
               {props.project_name}
             </h3>
-            <h4 className="mb-1 text-yellow-500 cardd-price">
+            <h4 className="mb-1 text-blue-500 cardd-price">
               {checkPricing(props.price_starting_from)}
             </h4>
             <p className="mb-1 cardd-subtitle cardd-subtitle-sm">

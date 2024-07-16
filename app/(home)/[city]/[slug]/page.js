@@ -169,30 +169,29 @@ export default async function Home({ params }) {
                       <div className="d-flex gap-3 mb-2">
                         <div className=" btn btn-lg bluemine ">
                           <span className="col fs-esmall text-dark fs-6">
-                            3 Bed
+                            {data.beds} Bed
                           </span>
                         </div>
                         <div className="  ">
                           <div className=" btn btn-lg bluemine ">
                             <span className="col fs-esmall text-dark fs-6">
-                              3 Bath
+                              {data.baths} Bath
                             </span>
                           </div>
                         </div>
                         <div className="  ">
                           <div className=" btn btn-lg bluemine ">
                             <span className="col fs-esmall text-dark fs-6">
-                              1400 sq ft
+                              {data.area} sq ft
                             </span>
                           </div>
                         </div>
                       </div>
                       <h2 className="text-mine fs-1 fw-mine mt-1 mb-0 text-primary font-family2 pt-3">
-                        USD 2,700 / Month
+                        USD {data.price_starting_from} / Monthly
                       </h2>
                       <h1 className="side fs-2 fw-mine font-family2">
-                        Fully furnished 2+1 bedroom apartment in Platinum
-                        Residences, Hulhumale’
+                        {data.project_name}
                       </h1>
 
                       <div className="rounded-mine pt-3">
@@ -333,7 +332,7 @@ export default async function Home({ params }) {
                       </div>
                       <CustomModal
                         linkText={
-                          <span className="btn  btn-warning rounded-pill shadow-lg">
+                          <span className="btn  btn-primary rounded-pill shadow-lg">
                             Send me more info about {data.project_name}
                           </span>
                         }
@@ -376,19 +375,20 @@ export default async function Home({ params }) {
                         <p className="text-small text-secondary">
                           Note:{" "}
                           <Link href="https://condomonk.ca/" target="_blank">
-                            Condomonk
+                            Malives Homes
                           </Link>{" "}
-                          is Canada's one of the largest database of new pre
-                          construction homes. Our comprehensive database is
+                          is Maldives's one of the largest database of
+                          appartments and vills. Our comprehensive database is
                           populated by our research and analysis of publicly
-                          available data. Condomonk strives for accuracy and we
-                          make every effort to verify the information. The
-                          information provided on Condomonk.ca may be outdated
-                          or inaccurate. Condomonk Inc. is not liable for the
-                          use or misuse of the site's information.The
-                          information displayed on condomonk.ca is for reference
-                          only. Please contact a liscenced real estate agent or
-                          broker to seek advice or receive updated and accurate
+                          available data. Maldiveshomes strives for accuracy and
+                          we make every effort to verify the information. The
+                          information provided on Maldiveshomes.com may be
+                          outdated or inaccurate. Maldiveshomes Inc. is not
+                          liable for the use or misuse of the site's
+                          information.The information displayed on
+                          maldiveshomes.com is for reference only. Please
+                          contact a liscenced real estate agent or broker to
+                          seek advice or receive updated and accurate
                           information.
                         </p>
                       </div>
@@ -401,14 +401,14 @@ export default async function Home({ params }) {
                 <div className="py-4 py-md-0"></div>
                 <div className="side-fix-contact mt-mine pe-0">
                   <div className="text-center">
-                    <img
+                    {/* <img
                       alt="Register Now Text Design"
                       src="/contact-me.png"
                       className="img-fluid mb-3 side-contact-img"
-                    />
+                    /> */}
                   </div>
                   <div className="m-1 p-4 py-3 shadow-lg rounded-mine bordt form-color">
-                    <div className="row d-flex justify-content-center align-items-center">
+                    {/* <div className="row d-flex justify-content-center align-items-center">
                       <div className="col-8 text-center">
                         <h5 className="fw-bold  fs-4 "></h5>
 
@@ -431,7 +431,7 @@ export default async function Home({ params }) {
                           </span>
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="row  align-items-start pt-3">
                       {/* <div className="col-4">
                         <img
@@ -440,7 +440,7 @@ export default async function Home({ params }) {
                           className="agent-img"
                         />
                       </div> */}
-                      {/* <div className="text-center">
+                      <div className="text-center">
                         <h5 className="fw-bold text-center linem fs-4  mb-0 font-family2">
                           GET PLATINUM ACCESS!!
                         </h5>
@@ -449,7 +449,7 @@ export default async function Home({ params }) {
                           Register to Receive Guaranteed Platinum Access &
                           Prices, Incentives & Discounts, Floor Plans & More!
                         </p>
-                      </div> */}
+                      </div>
                     </div>
                     <div className="my-2"></div>
                     <SideContactForm
@@ -463,16 +463,17 @@ export default async function Home({ params }) {
                     ></SideContactForm>
                     <div className="d-flex">
                       <p className="small-text2 mb-3 text-center">
-                        Condomonk.ca serves as an online database for
-                        pre-construction homes. Condomonk compiles a list of
-                        projects available publicly on the internet and does not
-                        engage in real estate transactions. Please note that the
-                        information provided on this page may be outdated or
-                        inaccurate. By submitting the above form, you consent to
-                        being contacted by real estate agents advertising on
-                        this page. Your information may be shared with our
-                        partners or advertisers to assist with your inquiries.
-                        You can unsubscribe at any time by emailing us.
+                        Maldives Homes serves as an online database for
+                        Appartments and Villas in Maldives. Maldives hOmes
+                        compiles a list of projects available publicly on the
+                        internet and does not engage in real estate
+                        transactions. Please note that the information provided
+                        on this page may be outdated or inaccurate. By
+                        submitting the above form, you consent to being
+                        contacted by real estate agents advertising on this
+                        page. Your information may be shared with our partners
+                        or advertisers to assist with your inquiries. You can
+                        unsubscribe at any time by emailing us.
                       </p>
                     </div>
                   </div>

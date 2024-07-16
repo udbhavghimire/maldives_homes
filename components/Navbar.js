@@ -78,7 +78,7 @@ const Navbar = ({ cities, dropdown_cities, transparent }) => {
             id="collapsibleNavId"
           >
             <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-              {/* <li className="nav-item dropdown mx-1">
+              <li className="nav-item dropdown mx-1">
                 <Link
                   className="nav-link dropdown-toggle active fw-medium  rounded-2"
                   href="#"
@@ -93,15 +93,12 @@ const Navbar = ({ cities, dropdown_cities, transparent }) => {
                   className="dropdown-menu mt-1"
                   aria-labelledby="dropdownId"
                 >
-                  <div className="container">
-                    <div className="row row-cols-md-3 row-cols-3">
+                  <div className="">
+                    <div className="row row-cols-md-3 row-cols-3 ">
                       {cities &&
                         cities.map((city) => (
-                          <div className="col" key={city.id}>
-                            <Link
-                              className="dropdown-item"
-                              href={`/${city.slug}`}
-                            >
+                          <div className="col " key={city.id}>
+                            <Link className=" px-3" href={`/${city.slug}`}>
                               {city.name}
                             </Link>
                           </div>
@@ -109,21 +106,53 @@ const Navbar = ({ cities, dropdown_cities, transparent }) => {
                     </div>
                   </div>
                 </div>
-              </li> */}
-              <li className="nav-item mx-1">
-                <Link className="nav-link" href="/villas-for-sale">
-                  Villas for sale
-                </Link>
               </li>
-              <li className="nav-item mx-1">
-                <Link className="nav-link" href="/appartment-for-sale">
-                  Appartment for sale
+              <li className="nav-item dropdown mx-1">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="villasDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Villas
                 </Link>
+                <ul className="dropdown-menu" aria-labelledby="villasDropdown">
+                  <li>
+                    <Link className="dropdown-item" href="/villas-for-sale">
+                      Villas for Sale
+                    </Link>
+                  </li>
+                </ul>
               </li>
-              <li className="nav-item mx-1">
-                <Link className="nav-link" href="/appartment-for-lease">
-                  Appartment for lease
+
+              <li className="nav-item dropdown mx-1">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="apartmentsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Apartments
                 </Link>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="apartmentsDropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" href="/apartment-for-sale">
+                      Apartments for Sale
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" href="/apartment-for-lease">
+                      Apartments for Lease
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
             <li class="nav-item d-none d-md-block">

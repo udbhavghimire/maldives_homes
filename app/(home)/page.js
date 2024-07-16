@@ -46,7 +46,8 @@ async function getCities() {
 //   return res.json();
 // }
 export default async function Home(props) {
-  /* const data = await getData("calgary");
+  const data = await getData("male");
+  /* 
   const mississauga_data = await getData("mississauga");
   const edmonton_data = await getData("edmonton");
   const cambridge_data = await getData("cambridge"); */
@@ -146,7 +147,7 @@ export default async function Home(props) {
             <div className=" d-flex justify-content-center align-items-center">
               <h2 className="fw-mine ccent-line fs-big text-center">
                 <Link
-                  href={"/calgary"}
+                  href={"/male"}
                   className="link-black font-family2 px-md-4 px-0"
                 >
                   Appartment for sale in Malé
@@ -155,16 +156,13 @@ export default async function Home(props) {
             </div>
             <div className="text-center pb-3">
               <p className="fs-5 mb-1">Explore 20+ appartments in Malé</p>
-              <Link
-                href={"/calgary"}
-                className="mt-1 btn btn-outline-dark mb-0"
-              >
+              <Link href={"/male"} className="mt-1 btn btn-outline-dark mb-0">
                 Explore All
                 <i className="bi bi-arrow-right-short"></i>
               </Link>
             </div>
           </div>
-          {/* 
+
           <div className="row row-cols-1 row-cols-md-4 gy-md-5 gx-3">
             {data.preconstructions &&
               data.preconstructions.slice(0, 8).map((item) => (
@@ -180,7 +178,6 @@ export default async function Home(props) {
                 </div>
               ))}
           </div>
-          */}
 
           <div className="container my-4">
             <div className="row pt-5 mt-md-5 align-items-center justify-content-between">
@@ -507,16 +504,16 @@ export default async function Home(props) {
                   ></BottomContactForm>
                   <div className="d-flex">
                     <p className="small-text2 mb-3 text-center">
-                      Condomonk.ca serves as an online database for
-                      pre-construction homes. Condomonk compiles a list of
-                      projects available publicly on the internet and does not
-                      engage in real estate transactions. Please note that the
-                      information provided on this page may be outdated or
-                      inaccurate. By submitting the above form, you consent to
-                      being contacted by real estate agents advertising on this
-                      page. Your information may be shared with our partners or
-                      advertisers to assist with your inquiries. You can
-                      unsubscribe at any time by emailing us.
+                      Maldiveshomes.com serves as an online database for
+                      appartment and villas for sale. Maldiveshomes compiles a
+                      list of projects available publicly on the internet and
+                      does not engage in real estate transactions. Please note
+                      that the information provided on this page may be outdated
+                      or inaccurate. By submitting the above form, you consent
+                      to being contacted by real estate agents advertising on
+                      this page. Your information may be shared with our
+                      partners or advertisers to assist with your inquiries. You
+                      can unsubscribe at any time by emailing us.
                     </p>
                   </div>
                 </div>
