@@ -21,7 +21,7 @@ const SearchWithAutocomplete = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api.condomonk.ca/api/all-precons-search/"
+          "https://wong.condomonk.ca/api/all-precons-search/"
         );
         setData(response.data);
       } catch (error) {

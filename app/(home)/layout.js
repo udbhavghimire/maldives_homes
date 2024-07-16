@@ -44,7 +44,31 @@ export const viewport = {
   maximumScale: 1,
 };
 
+async function getCities() {
+  const res = await fetch("https://wong.condomonk.ca/api/all-city", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getCitiesandProjects() {
+  const res = await fetch("https://wong.condomonk.ca/api/all-precons", {
+    next: { revalidate: 10 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
 export default async function RootLayout({ children }) {
+  let cities = await getCities();
+  let dropdown_cities = await getCitiesandProjects();
   return (
     <html lang="en">
       <body className={montserrat.className}>
@@ -59,10 +83,13 @@ export default async function RootLayout({ children }) {
           speed={200}
           shadow="0 0 10px #00A1FF,0 0 5px #00A1FF"
         />
+
+        <Navbar cities={cities} dropdown_cities={dropdown_cities}></Navbar>
         <Providers>
           <GoogleAnalytics />
           {children}
         </Providers>
+        <Footer cities={cities}></Footer>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-BZlP8y3y1aP5dJt6z/74ukidT+PiZCzV5u5F5+1OW2F0k0yGBGvxXuVEvaO3dPbi"

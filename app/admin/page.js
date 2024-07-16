@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     axios
       .get(
-        "https://api.condomonk.ca/api/preconstructions/?small=aaa&page=" +
+        "https://wong.condomonk.ca/api/preconstructions/?page=" +
           page +
           "&city=" +
           filters.city
@@ -40,7 +40,7 @@ export default function Home() {
       });
 
     axios
-      .get("https://api.condomonk.ca/api/city/?show_desc=no")
+      .get("https://wong.condomonk.ca/api/city/?show_desc=no")
       .then((res) => {
         setCities(res.data.results);
       })
@@ -79,7 +79,7 @@ export default function Home() {
 
   function deletePreConstruction(id) {
     axios
-      .delete(`https://api.condomonk.ca/api/preconstructions/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/preconstructions/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetch(!refetch);

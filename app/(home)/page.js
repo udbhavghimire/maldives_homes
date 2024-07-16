@@ -10,7 +10,7 @@ import AOSWrapper from "@/components/AOSWrapper";
 
 async function getData(city) {
   const res = await fetch(
-    "https://api.condomonk.ca/api/preconstructions-city/" +
+    "https://wong.condomonk.ca/api/preconstructions-city/" +
       city +
       "?page_size=10",
     {
@@ -24,7 +24,7 @@ async function getData(city) {
   return res.json();
 }
 async function getCities() {
-  const res = await fetch("https://api.condomonk.ca/api/all-city", {
+  const res = await fetch("https://wong.condomonk.ca/api/all-city", {
     next: { revalidate: 10 },
   });
 
@@ -35,7 +35,7 @@ async function getCities() {
 }
 // async function getFeaturedData() {
 //   const res = await fetch(
-//     "https://api.condomonk.ca/api/preconstructions/?is_featured=True",
+//     "https://wong.condomonk.ca/api/preconstructions/?is_featured=True",
 //     {
 //       next: { revalidate: 10 },
 //     }
@@ -46,10 +46,10 @@ async function getCities() {
 //   return res.json();
 // }
 export default async function Home(props) {
-  const data = await getData("calgary");
+  /* const data = await getData("calgary");
   const mississauga_data = await getData("mississauga");
   const edmonton_data = await getData("edmonton");
-  const cambridge_data = await getData("cambridge");
+  const cambridge_data = await getData("cambridge"); */
   let cities = await getCities();
   // let dropdown_cities = await getCitiesandProjects();
   // const featured = await getFeaturedData();
@@ -164,6 +164,7 @@ export default async function Home(props) {
               </Link>
             </div>
           </div>
+          {/* 
           <div className="row row-cols-1 row-cols-md-4 gy-md-5 gx-3">
             {data.preconstructions &&
               data.preconstructions.slice(0, 8).map((item) => (
@@ -179,6 +180,7 @@ export default async function Home(props) {
                 </div>
               ))}
           </div>
+          */}
 
           <div className="container my-4">
             <div className="row pt-5 mt-md-5 align-items-center justify-content-between">

@@ -14,13 +14,13 @@ export default function Update({ params }) {
     project_name: "",
     price_starting_from: 0.0,
     price_to: 0.0,
-    project_type: "Appartment",
+    project_type: "Apartment",
     description: "",
     project_address: "",
+    beds: 0,
+    baths: 0,
+    area: 0,
     is_featured: false,
-    bed: "",
-    bath: "",
-    area: false,
     status: "Sell",
     developer: {
       name: "",
@@ -68,7 +68,7 @@ export default function Update({ params }) {
       return;
     }
     axios
-      .post("https://api.condomonk.ca/api/developers/", developerdata, {
+      .post("https://wong.condomonk.ca/api/developers/", developerdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -109,7 +109,7 @@ export default function Update({ params }) {
 
   useEffect(() => {
     axios
-      .get("https://api.condomonk.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/city/")
       .then((res) => {
         console.log(res.data.results);
         setCities(res.data.results);
@@ -123,7 +123,7 @@ export default function Update({ params }) {
       });
 
     axios
-      .get("https://api.condomonk.ca/api/developers/")
+      .get("https://wong.condomonk.ca/api/developers/")
       .then((res) => {
         console.log(res.data.results);
         setDevelopers(res.data.results);
@@ -133,7 +133,7 @@ export default function Update({ params }) {
       });
 
     axios
-      .get("https://api.condomonk.ca/api/preconstructions/" + params.id + "/")
+      .get("https://wong.condomonk.ca/api/preconstructions/" + params.id + "/")
       .then((res) => {
         setPredata(res.data);
       })
@@ -190,8 +190,8 @@ export default function Update({ params }) {
       predata.status === "" ||
       predata.city.name === "" ||
       predata.developer.name === "" ||
-      predata.bed === "" ||
-      predata.bath === "" ||
+      predata.beds === "" ||
+      predata.baths === "" ||
       predata.area === ""
     ) {
       swal("Please fill all the fields", "", "error");
@@ -206,7 +206,7 @@ export default function Update({ params }) {
 
     axios
       .put(
-        `https://api.condomonk.ca/api/preconstructions/${predata.id}/`,
+        `https://wong.condomonk.ca/api/preconstructions/${predata.id}/`,
         alldata,
         {
           headers: {
@@ -247,7 +247,7 @@ export default function Update({ params }) {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`https://api.condomonk.ca/api/delete-image/${image.id}/`)
+          .delete(`https://wong.condomonk.ca/api/delete-image/${image.id}/`)
           .then((res) => {
             console.log(res.data);
             setRefetch(!refetch);
@@ -279,7 +279,7 @@ export default function Update({ params }) {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`https://api.condomonk.ca/api/delete-floorplan/${plan.id}/`)
+          .delete(`https://wong.condomonk.ca/api/delete-floorplan/${plan.id}/`)
           .then((res) => {
             console.log(res.data);
             setRefetch(!refetch);
@@ -523,11 +523,11 @@ export default function Update({ params }) {
                     <input
                       type="text"
                       className="form-control"
-                      id="project_bed"
-                      value={predata.project_bed}
+                      id="beds"
+                      value={predata.beds}
                       onChange={(e) => handleChange(e)}
                     />
-                    <label htmlFor="projectbed">
+                    <label htmlFor="beds">
                       Bed <span className="text-danger">*</span>
                     </label>
                   </div>
@@ -537,11 +537,11 @@ export default function Update({ params }) {
                     <input
                       type="text"
                       className="form-control"
-                      id="project_bath"
-                      value={predata.project_bath}
+                      id="baths"
+                      value={predata.baths}
                       onChange={(e) => handleChange(e)}
                     />
-                    <label htmlFor="projectbed">
+                    <label htmlFor="baths">
                       Bath <span className="text-danger">*</span>
                     </label>
                   </div>
@@ -551,11 +551,11 @@ export default function Update({ params }) {
                     <input
                       type="text"
                       className="form-control"
-                      id="project_area"
-                      value={predata.project_area}
+                      id="area"
+                      value={predata.area}
                       onChange={(e) => handleChange(e)}
                     />
-                    <label htmlFor="projectbed">
+                    <label htmlFor="area">
                       Area <span className="text-danger">*</span>
                     </label>
                   </div>

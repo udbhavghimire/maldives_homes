@@ -9,9 +9,9 @@ import Link from "next/link";
 
 async function getData(city) {
   const res = await fetch(
-    "https://api.condomonk.ca/api/preconstructions-city/" +
+    "https://wong.condomonk.ca/api/preconstructions-city/" +
       city +
-      "?project_type=Townhome&page_size=200",
+      "?project_type=Condo&page_size=200",
     {
       next: { revalidate: 10 },
     }
@@ -25,7 +25,7 @@ async function getData(city) {
 }
 
 async function getCities() {
-  const res = await fetch("https://api.condomonk.ca/api/all-city", {
+  const res = await fetch("https://wong.condomonk.ca/api/all-city", {
     next: { revalidate: 10 },
   });
 
@@ -42,7 +42,7 @@ const CapitalizeFirst = (city) => {
 const retImage = (data) => {
   if (data.length > 0) {
     if (data[0].image.length > 0 && data[0].image[0].image) {
-      return `https://api.condomonk.ca${data[0].image[0].image}`;
+      return `https://wong.condomonk.ca${data[0].image[0].image}`;
     }
   } else {
     return "/social/gta.webp";
@@ -55,14 +55,13 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://condomonk.ca/${params.city}/townhomes/`,
+      canonical: `https://condomonk.ca/${params.city}/condos/`,
     },
-    title:
-      data.preconstructions.length + " Preconstruction Townhomes in " + city,
+    title: data.preconstructions.length + " Preconstruction Condos in " + city,
     openGraph: {
       images: retImage(data.preconstructions),
     },
-    description: `${city} upcoming pre construction Townhomes. Check out ${data.preconstructions.length}+ new construction townhomes on condomonk. Floor plans & pricing updated for upcoming new construction townhomes in ${city}`,
+    description: `${city} upcoming pre construction Condos. Check out ${data.preconstructions.length}+ new construction condos on Dolphy. Floor plans & pricing updated for upcoming new construction condos in ${city}`,
   };
 }
 
@@ -75,12 +74,12 @@ export default async function Home({ params }) {
     <>
       <FixedContactButton></FixedContactButton>
       <div className="pt-lg-5 pt-3 position-relative">
-        <div className="container ">
+        <div className="container">
           <div className="">
             <h1 className="main-title  font-family2 mb-2">
-              {`Pre Construction Townhomes in ${CapitalizeFirst(params.city)} `}
+              {` New Construction Condos in  ${CapitalizeFirst(params.city)} `}{" "}
               <div className="relative inline-flex sm-center me-2 text-wrap">
-                <span className="absolute inset-x-0 bottom-0 "></span>
+                <span className="absolute inset-x-0 bottom-0 b"></span>
                 <span className="relative font-bold text-black whitespace-normal">
                   (Selling Now)
                 </span>
@@ -89,16 +88,16 @@ export default async function Home({ params }) {
             <p className=" font-normal  mb-2 sm-center">
               {`${
                 data.preconstructions.length
-              } New Pre Construction Townhouse for sale in ${CapitalizeFirst(
+              } New Pre construction Condos for sale in ${CapitalizeFirst(
                 params.city
               )}  `}
             </p>
           </div>
           <div className="d-flex sm-center pb-2 pb-md-0 sticky-buttons">
-            <div className="d-flex flex-column flex-md-row mb-md-4 mb-0 mt-1 overflow-hidden ">
+            <div className="d-flex flex-column flex-md-row mb-md-4 mb-0 mt-1 overflow-hidden">
               <div className="d-flex gap-2">
                 <Link
-                  className="link-black badge py-2 my-1  bg-white shadow-sm text-dark fs-small fw-m"
+                  className="llink-black badge py-2 my-1  bg-white shadow-sm text-dark fs-small fw-m"
                   href={`/${params.city}/`}
                 >
                   All Projects in {CapitalizeFirst(params.city)}
@@ -113,24 +112,23 @@ export default async function Home({ params }) {
               <div className="d-flex gap-2">
                 <Link
                   className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m"
-                  href={`/${params.city}/detached/`}
+                  href={`/${params.city}/townhomes/`}
                 >
-                  {CapitalizeFirst(params.city)} Detached Homes
+                  New Townhomes {CapitalizeFirst(params.city)}
                 </Link>
                 <Link
                   className="link-black badge py-2 my-1  bg-white shadow-sm text-dark fs-small fw-m"
-                  href={`/${params.city}/condos/`}
+                  href={`/${params.city}/detached/`}
                 >
-                  New Condos
-                  {CapitalizeFirst(params.city)}
+                  New Detached Homes {CapitalizeFirst(params.city)}
                 </Link>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="container ">
-          <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3 gx-lg-2">
+        <div className="container">
+          <div className="py-2"></div>
+          <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3">
             {data.preconstructions &&
               data.preconstructions.map((item, no) => (
                 <div className="col" key={item.id}>

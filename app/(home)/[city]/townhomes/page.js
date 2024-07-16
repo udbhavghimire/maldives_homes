@@ -9,9 +9,9 @@ import Link from "next/link";
 
 async function getData(city) {
   const res = await fetch(
-    "https://api.condomonk.ca/api/preconstructions-city/" +
+    "https://wong.condomonk.ca/api/preconstructions-city/" +
       city +
-      "?status=Upcoming&page_size=200",
+      "?project_type=Townhome&page_size=200",
     {
       next: { revalidate: 10 },
     }
@@ -25,7 +25,7 @@ async function getData(city) {
 }
 
 async function getCities() {
-  const res = await fetch("https://api.condomonk.ca/api/all-city", {
+  const res = await fetch("https://wong.condomonk.ca/api/all-city", {
     next: { revalidate: 10 },
   });
 
@@ -42,7 +42,7 @@ const CapitalizeFirst = (city) => {
 const retImage = (data) => {
   if (data.length > 0) {
     if (data[0].image.length > 0 && data[0].image[0].image) {
-      return `https://api.condomonk.ca${data[0].image[0].image}`;
+      return `https://wong.condomonk.ca${data[0].image[0].image}`;
     }
   } else {
     return "/social/gta.webp";
@@ -55,16 +55,14 @@ export async function generateMetadata({ params }, parent) {
   return {
     ...parent,
     alternates: {
-      canonical: `https://condomonk.ca/${params.city}/upcoming/`,
+      canonical: `https://condomonk.ca/${params.city}/townhomes/`,
     },
     title:
-      data.preconstructions.length +
-      " Upcoming Preconstruction Homes in " +
-      city,
+      data.preconstructions.length + " Preconstruction Townhomes in " + city,
     openGraph: {
       images: retImage(data.preconstructions),
     },
-    description: `${city} upcoming pre construction TownHomes, Detached & Condos. Check out ${data.preconstructions.length}+ upcoming new construction homes on condomonk. Floor plans & pricing updated for upcoming new construction homes in ${city}`,
+    description: `${city} upcoming pre construction Townhomes. Check out ${data.preconstructions.length}+ new construction townhomes on condomonk. Floor plans & pricing updated for upcoming new construction townhomes in ${city}`,
   };
 }
 
@@ -73,10 +71,6 @@ export default async function Home({ params }) {
   // const blogPosts = await fetchBlogPostByCity(params?.city);
   let cities = await getCities();
 
-  const filteredprojects = (value) => {
-    return data.preconstructions.filter((item) => item.status == value);
-  };
-
   return (
     <>
       <FixedContactButton></FixedContactButton>
@@ -84,35 +78,36 @@ export default async function Home({ params }) {
         <div className="container ">
           <div className="">
             <h1 className="main-title  font-family2 mb-2">
-              {` Pre Construction Homes in ${CapitalizeFirst(params.city)} `}{" "}
+              {`Pre Construction Townhomes in ${CapitalizeFirst(params.city)} `}
               <div className="relative inline-flex sm-center me-2 text-wrap">
-                <span className="absolute inset-x-0 bottom-0"></span>
+                <span className="absolute inset-x-0 bottom-0 "></span>
                 <span className="relative font-bold text-black whitespace-normal">
-                  (Upcoming)
+                  (Selling Now)
                 </span>
               </div>
             </h1>
             <p className=" font-normal  mb-2 sm-center">
               {`${
                 data.preconstructions.length
-              } Upcoming Pre construction Detached,
-              Townhomes and Condos in ${CapitalizeFirst(params.city)} `}
+              } New Pre Construction Townhouse for sale in ${CapitalizeFirst(
+                params.city
+              )}  `}
             </p>
           </div>
           <div className="d-flex sm-center pb-2 pb-md-0 sticky-buttons">
-            <div className="d-flex flex-column flex-md-row mb-md-4 mb-0 mt-1 overflow-hidden">
+            <div className="d-flex flex-column flex-md-row mb-md-4 mb-0 mt-1 overflow-hidden ">
               <div className="d-flex gap-2">
                 <Link
                   className="link-black badge py-2 my-1  bg-white shadow-sm text-dark fs-small fw-m"
-                  href={`/${params.city}`}
+                  href={`/${params.city}/`}
                 >
                   All Projects in {CapitalizeFirst(params.city)}
                 </Link>
                 <Link
                   className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m  mx-0 me-2"
-                  href={`/${params.city}/townhomes/`}
+                  href={`/${params.city}/upcoming/`}
                 >
-                  New Townhomes {CapitalizeFirst(params.city)}
+                  Upcoming Projects in {CapitalizeFirst(params.city)}
                 </Link>
               </div>
               <div className="d-flex gap-2">
@@ -120,69 +115,21 @@ export default async function Home({ params }) {
                   className="link-black badge py-2 my-1 bg-white shadow-sm text-dark fs-small fw-m"
                   href={`/${params.city}/detached/`}
                 >
-                  New Detached Homes {CapitalizeFirst(params.city)}
+                  {CapitalizeFirst(params.city)} Detached Homes
                 </Link>
                 <Link
                   className="link-black badge py-2 my-1  bg-white shadow-sm text-dark fs-small fw-m"
                   href={`/${params.city}/condos/`}
                 >
-                  New Condos {CapitalizeFirst(params.city)}
+                  New Condos
+                  {CapitalizeFirst(params.city)}
                 </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* <div className="bg-white pt-3 pb-3 p-sticky-top">
-          <div className="container d-flex gap-2 flex-column align-items-center flex-md-row justify-content-md-start align-items-md-center fw-normal">
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">
-                Hey condomonk! I am looking for
-              </h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                Home Types
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-              <h4 className="fs-6 fw-bold text-mine">under</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All price range
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-            <div className="d-flex">
-              <h4 className="fs-6 fw-bold text-mine">completed by</h4>
-              <h4 className="fs-6 fw-bold d-flex align-items-center mx-1 border-bottom2">
-                All
-                <img
-                  src="/dropdown.svg"
-                  alt="dropdown icon"
-                  className="img-fluid dropdown-icon ms-1"
-                />
-              </h4>
-            </div>
-          </div>
-        </div> */}
-
-        <div className="container">
-          <div className="py-2"></div>
+        <div className="container ">
           <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3 gx-lg-2">
             {data.preconstructions &&
               data.preconstructions.map((item, no) => (
