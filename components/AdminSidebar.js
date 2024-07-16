@@ -14,7 +14,7 @@ const AdminSidebar = () => {
             href="/admin/"
           >
             <i className="bi bi-grid"></i>
-            <span>Preconstructions</span>
+            <span>Properties</span>
           </Link>
         </li>
         <li className="nav-item">
