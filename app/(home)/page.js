@@ -156,7 +156,10 @@ export default async function Home(props) {
             </div>
             <div className="text-center pb-3">
               <p className="fs-5 mb-1">Explore 20+ appartments in Malé</p>
-              <Link href={"/male"} className="mt-1 btn btn-outline-dark mb-0">
+              <Link
+                href={"/male"}
+                className="mt-1 btn btn-outline-primary mb-0"
+              >
                 Explore All
                 <i className="bi bi-arrow-right-short"></i>
               </Link>
@@ -267,7 +270,7 @@ export default async function Home(props) {
                     <button className="button btn btn-dark  mr-2">
                       Request Information
                     </button>
-                    <button className="button btn btn-primary">
+                    <button className="button btn btn-warning">
                       Contact Now
                     </button>
                   </Link>
@@ -330,9 +333,9 @@ export default async function Home(props) {
                 </div>
                 <div className="sm-center mt-2 mt-md-0">
                   <Link href="#projects">
-                    <div className=" mt-3 btn btn-outline-dark sm-center  ">
+                    <div className=" mt-3 btn btn-outline-primary sm-center  ">
                       {" "}
-                      <span className="sm-center btn-outline-dark ">
+                      <span className="sm-center btn-outline-primary ">
                         Explore More{" "}
                         <i class="bi bi-arrow-up-right-circle sm-center "></i>
                       </span>
@@ -432,14 +435,18 @@ export default async function Home(props) {
           </div>
 
           <div className="pt-md-5 pt-2" id="about">
-            <h2 className="fw-mine text-center mb-5 fs-big font-family2">
-              Your Expert Guide to Luxury Living in Maldives
+            <h2 className="fw-mine text-center mb-5 fs-big font-family2 d-flex justify-content-center align-items-center">
+              Your Expert Guide to{" "}
+              <div>
+                <span className="text-warning fw-bold mx-3"> Luxury </span>{" "}
+              </div>
+              Living in Maldives
             </h2>
             <div className="pt-md-5 pt-0"></div>
             <div className="pt-md-5 pt-0"></div>
             <div className="container testimonial-section">
-              <div className="row">
-                <div className="col-md-6 order-md-1 order-2">
+              <div className="row d-flex justify">
+                <div className=" col-md-6 order-md-1 order-2">
                   <p className="testimonial-quote textt center-sm ps-md-5 ps-0 sm-center">
                     Meet <span className="fw-bold">Milan Pandey,</span> <br />
                     your dedicated real estate agent with a passion for helping
@@ -455,7 +462,7 @@ export default async function Home(props) {
                 </div>
                 <div className="col-md-6 order-md-2 order-1 pb-md-0 pb-5">
                   <img
-                    src="/agent.png"
+                    src="/milan.png"
                     alt="Milan Pandey"
                     class="testimonial-image"
                   />

@@ -403,10 +403,17 @@ a:hover {
 
 .testimonial-image {
     position: absolute;
+    right: 5rem;
     bottom: 0;
-    right: 0;
     width: auto;
-    height: 600px;
+    height: 520px;
+}
+
+.absolute-design-border {
+    position: relative;
+    bottom: 0rem;
+    right: -2rem;
+
 }
 
 .card {
@@ -1549,19 +1556,7 @@ label {
     font-weight: 500;
 }
 
-.absolute-design-border {
-    position: relative;
-    bottom: -2.3rem;
-    right: 8.2rem;
 
-}
-
-.absolute-design-border2 {
-    position: absolute;
-    top: 2rem;
-    right: 1rem;
-
-}
 
 .condocard-img-top {
     width: 100%;
