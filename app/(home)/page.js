@@ -435,10 +435,10 @@ export default async function Home(props) {
           </div>
 
           <div className="pt-md-5 pt-2" id="about">
-            <h2 className="fw-mine text-center mb-5 fs-big font-family2 d-flex justify-content-center align-items-center">
+            <h2 className="fw-mine text-center mb-5 fs-big font-family2 d-md-flex justify-content-center align-items-center d-block">
               Your Expert Guide to{" "}
               <div>
-                <span className="text-warning fw-bold mx-3"> Luxury </span>{" "}
+                <span className="text-warning fw-bold mx-3 "> Luxury </span>{" "}
               </div>
               Living in Maldives
             </h2>
