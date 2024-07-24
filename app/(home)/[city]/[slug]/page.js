@@ -85,6 +85,12 @@ export default async function Home({ params }) {
     return neImgs;
   };
 
+  const convDash = (add) => {
+    var result = add.split(" ").join("-");
+    var newresult = result.split(",").join("-");
+    return newresult;
+  };
+
   const doTOcheck = (noo) => {
     if (parseInt(noo) != 0) {
       return "- High $ " + Nformatter(noo, 2);

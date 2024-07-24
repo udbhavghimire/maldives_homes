@@ -37,7 +37,7 @@ export default function CondoCard(props) {
                 loading="lazy"
                 src={`https://wong.condomonk.ca${props.image[0].image}`}
                 layout="responsive"
-                className="img-fluid condocard-img-top"
+                className=" condocard-img-top"
                 alt={`${props.project_name} located at ${props.project_address} image`}
                 fetchPriority="high"
               />
@@ -46,7 +46,7 @@ export default function CondoCard(props) {
                 loading="lazy"
                 src="/noimage.webp"
                 layout="responsive"
-                className="img-fluid condocard-img-top"
+                className=" condocard-img-top"
                 alt={`no image available for ${props.project_name}`}
                 fetchPriority="high"
               />
@@ -72,7 +72,7 @@ export default function CondoCard(props) {
           className="card-body text-decoration-none text-dark bg-white shadow-lgg rounded-mine"
           target="_blank"
         >
-          <div className="card-content pt-2">
+          <div className="card-content pt-md-2 pt-0">
             <h3 className="mb-1 cardd-title text-dark font-family2">
               {props.project_name}
             </h3>

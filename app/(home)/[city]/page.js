@@ -58,7 +58,7 @@ export default async function Home({ params }) {
             <div>
               <h1 className="main-title font-family2 pb-2 pb-md-0">
                 Appartments for sale in {CapitalizeFirst(params.city)}{" "}
-                <span className="nextline-sm"> ( 2024 )</span>
+                <span className=""> ( 2024 )</span>
               </h1>
             </div>
             <div className="">
@@ -103,7 +103,7 @@ export default async function Home({ params }) {
             </div>
           </div>
           <div className="mt-md-5 mt-0"></div>
-          <div className="row row-cols-1 row-cols-md-4  gy-4 gx-3 gx-lg-3 ">
+          <div className="row row-cols-2 row-cols-md-4  gy-4 gx-3 gx-lg-3 ">
             {data.preconstructions &&
               filteredprojects("Sell").map((item, no) => (
                 <div className="col" key={item.id}>
@@ -129,7 +129,7 @@ export default async function Home({ params }) {
               <></>
             )}
           </h2>
-          <div className="row row-cols-1 row-cols-md-4 gy-4 gx-3">
+          <div className="row row-cols-2 row-cols-md-4 gy-4 gx-3">
             {data.preconstructions &&
               filteredprojects("Rent").map((item, no) => (
                 <div className="col" key={item.id}>

@@ -44,7 +44,7 @@ const Navbar = ({ cities, dropdown_cities, transparent }) => {
     >
       <nav className="navbar navbar-expand-lg py-lg-3">
         <div className="container justify-content-start">
-          <div className="d-flex">
+          <div className="d-flex justify-content-center align-items-center">
             <Link
               href="/"
               className="logo  justify-content-center align-items-center pe-1 font-family2"

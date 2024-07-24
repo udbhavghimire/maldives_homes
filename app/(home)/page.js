@@ -166,7 +166,7 @@ export default async function Home(props) {
             </div>
           </div>
 
-          <div className="row row-cols-1 row-cols-md-4 gy-md-5 gx-3">
+          <div className="row row-cols-2 row-cols-md-4 gy-md-5 gx-3">
             {data.preconstructions &&
               data.preconstructions.slice(0, 8).map((item) => (
                 <div className="col" key={item.id}>
@@ -447,7 +447,7 @@ export default async function Home(props) {
             <div className="container testimonial-section">
               <div className="row d-flex justify">
                 <div className=" col-md-6 order-md-1 order-2">
-                  <p className="testimonial-quote textt center-sm ps-md-5 ps-0 sm-center">
+                  <p className="testimonial-quote center-sm ps-md-5 ps-0 sm-center">
                     Meet <span className="fw-bold">Milan Pandey,</span> <br />
                     your dedicated real estate agent with a passion for helping
                     you find the perfect property. Whether you're searching for
