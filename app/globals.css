@@ -617,7 +617,39 @@ a:hover {
 
 }
 
+#myVideo {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 480px;
+    width: 600px;
+}
+
+.imghei {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%) !important;
+    background-size: 200% 100% !important;
+    animation: shine 1.5s linear infinite;
+    height: 320px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    object-position: center !important;
+}
+
 @media (max-width: 768px) {
+    .imghei {
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%) !important;
+        background-size: 200% 100% !important;
+        animation: shine 1.5s linear infinite;
+        height: 450px;
+        width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 10px !important;
+        object-position: center !important;
+    }
+
     .hero-section {
         height: 100vh;
         background: linear-gradient(to bottom, white, #7bd5f6);
@@ -1286,12 +1318,19 @@ a:hover {
 }
 
 .main-titlee {
-    font-size: 4.5rem;
+    font-size: 4.3rem;
     font-weight: 900;
-    color: #fff;
+    color: #000000;
     line-height: .85;
-    text-align: center;
     font-family: "Helvetica Neue", sans-serif;
+}
+
+.headline-textt {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    max-width: 500px;
+    line-height: 2rem;
+    text-align: justify;
 }
 
 .titlee {
@@ -1320,6 +1359,12 @@ a:hover {
     scrollbar-color: #aab7cf transparent;
     box-shadow: 0 0 20px rgba(1, 41, 112, 0.1);
     background-color: #fff;
+}
+
+.card-img-top {
+    position: relative;
+    width: auto;
+    height: 500px;
 }
 
 @media (max-width: 1199px) {
@@ -2331,7 +2376,18 @@ textarea {
     border-radius: 10px;
 }
 
+.mybot {
+    margin-bottom: 3px !important;
+}
+
 @media (max-width: 768px) {
+    .headline-textt {
+        font-size: 1.1rem !important;
+        font-weight: 500 !important;
+        line-height: 2rem;
+        text-align: justify;
+    }
+
     .carousel-inner img {
         width: 100%;
         height: 30rem;
